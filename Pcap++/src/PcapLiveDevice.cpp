@@ -193,6 +193,7 @@ void PcapLiveDevice::captureThreadMain()
 				PCPP_LOG_ERROR("pcap_dispatch returned an error: " << pcap_geterr(m_PcapDescriptor));
 				m_StopThread = true;
 			}
+			usleep(10);
 		}
 	}
 	else
@@ -204,6 +205,7 @@ void PcapLiveDevice::captureThreadMain()
 				PCPP_LOG_ERROR("pcap_dispatch returned an error: " << pcap_geterr(m_PcapDescriptor));
 				m_StopThread = true;
 			}
+			usleep(10);
 		}
 	}
 	PCPP_LOG_DEBUG("Ended capture thread for device '" << m_Name << "'");
